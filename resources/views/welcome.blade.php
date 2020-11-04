@@ -35,7 +35,7 @@
         @endif
         <td class='cell'>{{$entry['contributor']}}</td>
     <td class='delete_option' style='background-color:white;visibility:visible'>
-        <form id='deleteForm' method='POST' style='margin: auto;margin-left:0px;visibility:hidden;' action="{{route('book.handle')}}">
+        <form id='deleteForm' method='POST' style='margin: auto;margin-left:0px;visibility:hidden;' action="{{route('book.delete')}}">
             @csrf
             {{-- value='&#8855;' --}}
             <input class="btn btn-danger " type='submit' name='action' value="Delete">

@@ -25,7 +25,10 @@ class EntriesController extends Controller
             break;
 
             case "Edit":
-                
+                $request = new \Illuminate\Http\Request();
+                $request->replace(['id' => $id]);
+                //$entryModel = Entry::where('id',$id)->get();
+                return redirect()->route('book.edit',$request);
             break;
         }
 
