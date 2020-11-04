@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EntriesController;
+use App\Http\Controllers\AddBookControlled;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +18,8 @@ use App\Http\Controllers\EntriesController;
 //     return view('welcome');
 // });
 
-Route::get('/', [EntriesController::class,'show']);
+Route::get('/', [EntriesController::class,'show'])->name('main.show');
+
+Route::get('/addBook', [AddBookControlled::class, 'show'])->name('addBook.show');
+
+Route::post('/addBook', [AddBookControlled::class,'addBookSubmit'])->name('book.submit');

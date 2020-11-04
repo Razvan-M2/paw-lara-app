@@ -10,4 +10,5 @@ class Entry extends Model
     use HasFactory;
 
     protected $table = 'Entry';
+    public $timestamps = false;
 }

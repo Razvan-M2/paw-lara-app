@@ -1,7 +1,14 @@
-<h1>Entries List</h1>
+<head>
+    <link href="{{ asset('asset/css/welcome.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
 
-<table>
+<body>
+<h1 style="margin-left:2%">A List of Books</h1>
+    <a href="/addBook" class="btn btn-success" style="margin-bottom:20px;margin-top:20px;margin-left:2%;">Add a new book!</a>
 
+<div style="height:80%;width:40%;overflow:scroll;margin-left:2%">    
+    <table style="width:100%">
     <tr>
         <th class='title-head'>id</th>
         <th class='title-head'>Title</th>
@@ -18,9 +25,18 @@
         <td class='cell'>{{$entry['id']}}</td>
         <td class='cell'>{{$entry['name']}}</td>
         <td class='cell'>{{$entry['author']}}</td>
-        <td class='cell'>{{$entry['status']}}</td>
+    @if($entry['status'] === 1)
+        <td class='cell'>&#10004;</td>
+    @else
+        <td class='cell'>&#10008;</td>
+    @endif
+        
     </tr>
 
     @endforeach
 
 </table>
+</div> 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
