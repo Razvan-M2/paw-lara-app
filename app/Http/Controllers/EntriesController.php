@@ -14,4 +14,21 @@ class EntriesController extends Controller
         return view('welcome',['entries'=>$entries]);
         //return view('welcome');
     }
+
+    function deleteOrEdit(Request $request)
+    {
+        $id = $request->input('id');
+        
+        switch($request->input('action')){
+            case "Delete":
+                $entryModel = Entry::where('id',$id)->delete();
+            break;
+
+            case "Edit":
+                
+            break;
+        }
+
+        return redirect()->back();
+    }
 }

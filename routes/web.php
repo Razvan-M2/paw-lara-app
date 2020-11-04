@@ -23,3 +23,5 @@ Route::get('/', [EntriesController::class,'show'])->name('main.show');
 Route::get('/addBook', [AddBookControlled::class, 'show'])->name('addBook.show');
 
 Route::post('/addBook', [AddBookControlled::class,'addBookSubmit'])->name('book.submit');
+
+Route::post('/', [EntriesController::class,'deleteOrEdit'])->name('book.handle');

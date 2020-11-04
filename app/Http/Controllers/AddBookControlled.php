@@ -16,12 +16,19 @@ class AddBookControlled extends Controller
     {
         $title = $request->input('title');
         $author = $request->input('author');
+        $contributor = $request->input('contributor');
         $status = $request->input('status');
         
         $request->validate([
             'title' => 'required',
             'author' => 'required'
         ]);
+
+        if(empty($contributor)){
+            $contributor = "Anon";
+        }
+
+
         $entry = Entry::where([ ['author',$author],
                                 ['name',$title]
                                 ])->get();
@@ -30,6 +37,7 @@ class AddBookControlled extends Controller
             $entryModel->name =  $title;
             $entryModel->author = $author;
             $entryModel->status = $status;
+            $entryModel->contributor = $contributor;
             $entryModel->save();
 
             $entryModel->refresh();

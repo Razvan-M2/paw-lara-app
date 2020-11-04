@@ -21,6 +21,10 @@
         <span style="color: red;">@error('author'){{"The book must have an author!"}}@enderror</span>
           <input type="text" class="form-control" id="nameAuthorInput" name="author">
         </div>
+        <div class="form-group">
+          <label for="nameContributorInput">Add your name (only if you'd like..):</label>
+          <input type="text" class="form-control" id="nameContributorInput" name="contributor">
+        </div>
         <p>Have you read it?</p>
         <div class="form-group form-check">
           <input type="radio" class="form-check-input" id="answer1" name="status" value="1">
